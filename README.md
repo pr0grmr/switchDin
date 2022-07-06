@@ -9,7 +9,7 @@ Repository to hold SwitchDin Skills Test | Implementation of a MQTT Publish Subs
 ### Overview of Source Code:
  `client-publisher.py` : This MQTT Client connects to the broker and publishes a Random Number between 1 and 100 at random intervals between 1 and 30 seconds to the topic `switchDin/randomNumber`
 
-`client-sub-1.py` : This MQTT Client connects to the broker and subscribes to the topic `switchDin/randomNumber` and then calculates 1 minute, 5 minute and 30 minute averages and publishes it back to the MQTT broker on the various subtopics in `switchDin/stats/` topic. The average is calculated using the python `schedule` module which creates a repeating event every 1, 5 and 30 minute intervals. At each interval, relevant average is calculated and the list containing the values cleared. The process is then repeated. 
+`client-sub-1.py` : This MQTT Client connects to the broker and subscribes to the topic `switchDin/randomNumber` and then calculates 1 minute, 5 minute and 30 minute averages and publishes it back to the MQTT broker on the various subtopics in `switchDin/stats/` topic. The average is calculated using the python `schedule` module which creates a repeating event every 1, 5 and 30 minute intervals. At each interval, relevant average is calculated and the list containing the values cleared. The process is then repeated. The documentation for the `schedule` module can be found at https://schedule.readthedocs.io/en/stable/
 
 `client-sub-2.py` : This MQTT Client connects to the broker and subscribes to the the various subtopics in `switchDin/stats/` topic. Then prints the averages in a table on the console generated using the `prettyTable` python module. 
 
